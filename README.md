@@ -1,10 +1,8 @@
 # Facial Recognition Security Operations Center (SOC) System
 
-This repository hosts a Python-based Facial Recognition system designed for secure, real-time identity verification. Developed as part of a Summer of Code (SOC) project, this system integrates advanced neural networks with an intuitive user interface, providing robust capabilities for monitoring and managing access in security operations center environments. The project emphasizes detailed documentation for ease of understanding, deployment, and scalability.
-
 ## Project Overview
 
-The Facial Recognition SOC system aims to enhance security protocols by leveraging cutting-edge machine learning techniques to accurately identify and verify individuals. Its primary applications include access control, surveillance, and incident response within a security operations framework. The system is built with modularity in mind, allowing for future expansions and integrations with other security tools.
+This repository contains a Python-based Facial Recognition system developed as part of a Summer of Code (SOC) project. The system is designed for secure, real-time identity verification, integrating advanced neural networks with an intuitive user interface. It aims to enhance security protocols through accurate identification and verification of individuals, with primary applications in access control, surveillance, and incident response within a security operations framework. The project emphasizes modularity, detailed documentation, and scalability.
 
 ## Key Features
 
@@ -16,13 +14,20 @@ The Facial Recognition SOC system aims to enhance security protocols by leveragi
 
 ## Repository Structure
 
-*   `python_code/`: Contains all the Python source code for the facial recognition system, including modules for image processing, neural network models, and the user interface.
+*   `SOC Facial Recognition_Om_Chaudhari_24B2473/`: This directory contains the core application files, including scripts for data collection, preprocessing, model training (placeholder), and the main facial recognition application.
+    *   `collect_data.py`: Script for collecting face data for new individuals.
+    *   `facial_recognition_app.py`: The main command-line application for facial recognition.
+    *   `kivy_app.py`: The GUI application built with Kivy.
+    *   `preprocess_data.py`: Utilities for data preprocessing.
+    *   `train_model.py`: Placeholder for model training script.
+    *   `requirements.txt`: Lists all Python dependencies required to run the project.
+    *   `known_faces/`: Directory to store collected face data.
+*   `python_code/`: Contains general Python source code, including fundamental concepts, utility scripts, and modules for image processing and neural networks.
     *   `python_basics/`: Fundamental Python concepts and utility scripts.
     *   `modules/`: Essential Python modules and data science libraries (NumPy, Pandas, Matplotlib) used in the project.
     *   `neural_networks/`: Implementation and conceptual examples of neural network architectures relevant to facial recognition.
-*   `mid term report.pdf`: The initial mid-term report detailing the foundational Python programming and machine learning concepts explored during the early stages of the project.
-*   `resources.md`: A Markdown file listing all external learning resources, tutorials, and documentation links utilized throughout the project development.
-*   `README.md`: This current README file, providing an overview of the project.
+*   `mid term report.pdf`: The initial mid-term report detailing foundational Python programming and machine learning concepts.
+*   `resources.md`: A Markdown file listing external learning resources, tutorials, and documentation links.
 
 ## Installation and Setup
 
@@ -31,7 +36,7 @@ To set up and run the Facial Recognition SOC system, follow these steps:
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/omchaudhar/Facial-Recognition-SOC.git
-    cd Facial-Recognition-SOC
+    cd Facial-Recognition-SOC/SOC\ Facial\ Recognition_Om_Chaudhari_24B2473
     ```
 2.  **Create a virtual environment (recommended):**
     ```bash
@@ -40,16 +45,48 @@ To set up and run the Facial Recognition SOC system, follow these steps:
     ```
 3.  **Install dependencies:**
     ```bash
-    pip install -r requirements.txt  # Assuming a requirements.txt will be provided or created
+    pip install -r requirements.txt
     ```
-    *(Note: A `requirements.txt` file is not currently present in the repository. It is recommended to create one by running `pip freeze > requirements.txt` after installing all necessary libraries.)*
-
-4.  **Run the application:**
-    *(Specific instructions for running the facial recognition system will be provided here once the application's entry point is identified.)*
 
 ## Usage
 
-*(Detailed instructions on how to use the facial recognition system, including how to configure it, add new users, and monitor events, will be provided here.)*
+### Command Line Interface
+
+To run the main application via the command line:
+
+```bash
+python facial_recognition_app.py
+```
+
+This will present a menu with options:
+
+1.  Collect face data - Capture images for training.
+2.  Start real-time recognition - Begin face recognition.
+3.  Exit
+
+### Kivy GUI Application
+
+To run the graphical user interface:
+
+```bash
+python kivy_app.py
+```
+
+The GUI provides a camera preview, data collection interface, and real-time recognition controls.
+
+## How It Works
+
+1.  **Face Detection**: Uses OpenCV's Haar Cascade classifier to detect faces in real-time.
+2.  **Data Collection**: Captures and stores face images for each person.
+3.  **Face Recognition**: Employs template matching to compare detected faces with stored data.
+4.  **User Interface**: Offers both command-line and graphical interfaces for interaction.
+
+## Limitations
+
+*   The current implementation uses basic template matching for face recognition, which is less accurate than deep learning approaches.
+*   Camera access may not function in all environments (e.g., virtual machines or containers).
+*   Recognition accuracy is influenced by lighting conditions and face angles.
+*   Advanced features such as face verification or anti-spoofing are not yet implemented.
 
 ## Future Enhancements
 
@@ -57,6 +94,10 @@ To set up and run the Facial Recognition SOC system, follow these steps:
 *   Implementation of liveness detection to prevent spoofing attacks.
 *   Development of a robust database for storing facial embeddings and user data.
 *   Cloud deployment options for scalable and distributed operations.
+*   Implement deep learning-based face recognition (e.g., Siamese Neural Networks).
+*   Add face verification capabilities.
+*   Improve recognition accuracy with more advanced algorithms.
+*   Implement real-time performance optimizations.
 
 
 
